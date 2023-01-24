@@ -1,0 +1,101 @@
+.prisijungimoStilius{}
+
+
+/*nustatineju field input*/
+
+
+.manoLogin input[type="text"]{
+    border: none;
+    border-bottom:3px solid #0a9396;
+    background: transparent;
+    color: #0a9396;
+    box-shadow: none;
+    text-align: center;
+    border-radius: 1px;
+    font-size: 20px;
+
+}
+.manoLogin input[type="password"]{
+    border: none;
+    border-bottom:3px solid #0a9396;
+    background: transparent;
+    color: #0a9396;
+    box-shadow: none;
+    text-align: center;
+    border-radius: 1px;
+    font-size: 20px;
+
+}
+
+.manoLogin {
+    position: relative;
+}
+.manoLogin	i {
+    position: absolute;
+    width: 60px;
+    height: 14%;
+    background-color: #0a9396;
+    left: 0;
+    top: 1px;
+    animation-name: blink;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
+.manoLogin input:focus + i {
+    display: none;
+}
+
+.manoLogin	p {
+    position: absolute;
+    width: 60px;
+    height: 13%;
+    background-color: #0a9396;
+    left: 0;
+    top: 38%;
+    animation-name: blink;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    opacity: 1;
+}
+
+.manoLogin input:focus + p {
+    display: none;
+}
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes blink2 {
+    from { opacity: 100%; }
+    to { opacity: 80%; }
+}
+
+
+.manoLogin input[type="submit"]{
+    background: transparent;
+    border: none;
+}
+.manoLogin input[value="return"]{
+    color: #f38a1c;
+    font-size: 25px;
+    font-style: italic ;
+    font-weight: 600;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 70%, 70% 100%, 30% 100%, 0 100%, 0% 30%);
+background: red;
+
+}
+.manoSubmitSonai{
+    color: #0a9396;
+    font-size: 25px;
+    font-style: italic ;
+    font-weight: 700;
+}
+.submitMygtukoStilius{
+    background-color: #0a9396;
+border: none;
+    display: inline-grid;
+    clip-path: polygon(20% 0, 100% 0, 100% 50%, 100% 100%, 30% 100%, 25% 50%);
+}
+

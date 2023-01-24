@@ -25,4 +25,4 @@ projecto_failai
 |--- src (Aplikacijos išeities kodo failai)
 |--- vendor (Bibliotekų failai)
 edit_hosts_file.bat (Failas koreguojantis hosts failą Windows OS)
-```
+```# PhpScribbles

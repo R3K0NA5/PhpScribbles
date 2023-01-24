@@ -1,0 +1,260 @@
+body {
+    background-color: #001219;
+    margin: 0;
+    height: 100%;
+    width: 99%;
+    font: 1.3rem Inconsolata, monospace;
+    color: #0a9396;
+}
+
+
+footer {
+    margin-top: auto;
+
+    width: 100%;
+}
+
+.logoname1 {
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #001219;
+    color: #0a9396;
+    text-align: center;
+
+}
+
+.gapLogoTop {
+    padding: 3em 0;
+    color: red;
+
+}
+
+
+.loginstilius {
+    background-color: #001219;
+}
+
+.raudonas {
+    display: inline-block;
+    color: #0a9396;
+    font-size: 17px;
+    font-weight: 630;
+}
+
+.raudonas img {
+    float: left;
+    margin-right: 5px;
+
+}
+
+.raudonas p {
+    float: right;
+    margin-top: 1px;
+    text-shadow: 0 0 2px rgba(10, 147, 150, 0.4)
+}
+
+header li {
+    display: inline;
+    background-color: #001219;
+    border-radius: 0 0 10px 10px;
+}
+
+header ul {
+    background-color: #001219;
+}
+
+.melynasFonas {
+    background-color: rgba(10, 147, 150, 0.5);
+    height: 2em;
+    width: 100em;
+    padding-left: 0;
+    padding-right: 0;
+    color: #0a9396;
+    font-size: 1em;
+}
+
+header video {
+    border-top: none;
+    border-left: none;
+    width: 11em;
+    height: 11em;
+    background-color: #001219;
+
+}
+
+.blankDesine {
+    padding-right: 0;
+}
+
+footer p{
+    padding-top: 3px;
+}
+
+header .antrasL{z-index: 0}
+header .antrasL video{ z-index:-2 ;height: 100%; width: 100%; background-color: #0a9396}
+header .antrasL a { display:block;float: right; background-color: rgba(10, 147, 150, 0)
+}
+.moveRight {
+    margin-left: -33px;
+}
+header ul{
+    padding-top: 50px;
+    display: flex;
+}
+.logoff a{
+    position: absolute;
+    color: #001219;
+    font: 2rem Inconsolata, monospace;
+    left: 68px;
+    top: 7px;
+    z-index: 5;
+    text-decoration: none;
+}
+a:hover{text-decoration: none;}
+.personsa a{
+    position: absolute;
+    color: #001219;
+    font: 2rem Inconsolata, monospace;
+    left: 57px;
+    top: 6px;
+    z-index: 5;
+    text-decoration: none;
+}
+
+.tPagrindinis{
+
+    background-color: #4eb01b;
+bottom: 20px;
+}
+
+.tSeselis{
+    position: absolute;
+    width: 65em;
+    height: 68em;
+    top: -5em;
+    bottom: 42em;
+    clip-path: polygon(15% 0px, 100% 0px, 100.17% 51.47%, 100% 100%, 0px 100%, 0% 15%);
+    right: 84em;
+}
+
+
+
+
+
+/*
+
+.stylePatirtisI1 {
+    display: grid;
+    border: 10px solid rgba(148, 210, 189, 0.5);
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 50px 0;
+    color: rgba(148, 210, 189, 0.5);
+    align-content: center;
+    justify-content: center;
+
+}
+
+.stylePatirtisI2 {
+    border: 10px solid rgba(148, 210, 189, 0.5);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0 0 0 50px;
+    color: #0a9396;
+    padding-bottom: 1em;
+
+}
+
+.styleIssilavinimasI1 {
+    display: grid;
+    border: 10px solid #e9d8a6;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 50px 0;
+    color: #e9d8a6;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.styleIssilavinimasI2 {
+    border: 10px solid #e9d8a6;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0 0 0 50px;
+    color: #e9d8a6;
+    padding-bottom: 1em;
+}
+.styleSertifikataiI1 {
+    display: grid;
+    border: 10px solid #ee9b00;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 50px 0;
+    color: #ee9b00;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.styleSertifikataiI2 {
+    border: 10px solid #ee9b00;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0 0 0 50px;
+    color: #ee9b00;
+    padding-bottom: 1em;
+}
+.styleIgudziaiI1 {
+    display: grid;
+    border: 10px solid #ca6702;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 50px 0;
+    color: #ca6702;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.styleIgudziai2 {
+    border: 10px solid #ca6702;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0 0 0 50px;
+    color: #ca6702;
+    padding-bottom: 1em;
+}
+.styleKalbosI1 {
+    display: grid;
+    border: 10px solid #bb3e03;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 50px 0;
+    color: #bb3e03;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 2em;
+
+}
+
+.styleKalbos2 {
+    border: 10px solid #bb3e03;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0 0 0 50px;
+    color: #bb3e03;
+    padding-bottom: 2em;
+}*/

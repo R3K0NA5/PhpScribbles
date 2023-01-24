@@ -1,0 +1,59 @@
+header
+{display: block;
+    flex-wrap: wrap;}
+header nav{
+    float: right;
+}
+
+.logosStrand{
+}
+
+.logosStrand.animate-resize{
+    animation: loggedInTransitionResize 300ms;
+    animation-fill-mode: forwards;
+}
+
+.logosStrand.animate-opacity{
+    animation: loggedInTransition 300ms;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes loggedInTransition {
+    from {
+        opacity: 0;
+        width: 40em;
+        height: 40em;
+    }
+    to {
+        opacity: 1;
+        width: 40em;
+        height: 40em;
+    }
+}
+
+
+@keyframes loggedInTransitionResize {
+    from {
+        width: 100%;
+        height: 100%;
+    }
+    to {
+        width: 228px;
+        height: 228px;
+    }
+}
+.logosStrandoriginal2{
+
+}
+.logosStrandoriginal{
+}
+
+.logosStrandoriginal.animate-resize{
+    display: grid;
+    animation: loggedInTransitionResize 1300ms;
+    animation-fill-mode: forwards;
+    animation-delay: 2150ms;
+
+}

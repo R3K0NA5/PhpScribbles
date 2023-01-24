@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
+</head>
+<body>
+<div>
+<h3>Prisijungta prie dashboard   {{username}} , jusu statusas {{userType}}</h3>
+  <p>Siuo metu yra {{loggedInDate}}</p>
+<a href="index.php?logout=true"><button type="button" class="btn btn-primary">Atsijungti</button></a>
+  <p>Su klasiu pagalba kuriamas masinos kustomizacija{{raktas}}</p>
+</div >
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <figure class="figure">
+        <img src="img/melynas.png" class="figure-img img-fluid rounded" alt="test" width="300px" height="200px">
+        <figcaption class="figure-caption">Paimama masinos modelis </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure">
+        <img src="img/durys.png" class="figure-img img-fluid rounded" alt="test" width="300px" height="200px">
+        <figcaption class="figure-caption">Isiimamos durys </figcaption>
+      </figure>
+    </div>
+    <div class="col-sm">
+      <figure class="figure">
+        <img src="img/raudonasSuDurim.png" class="figure-img img-fluid rounded" alt="test" width="300px" height="200px">
+        <figcaption class="figure-caption">melynas duris pritaikom raudonai masinai</figcaption>
+      </figure>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/loginForm.css">
+    <link rel="stylesheet" href="css/layers1.css">
+    <link rel="stylesheet" href="css/fluidTransitionAdmin.css">
+    <link rel="stylesheet" href="css/persons.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<form action="/person/update" method="post">
+<input type="hidden" name="id" value="{{id}}"><br>
+    <input type="text" name="vardas" placeholder="Name" value="{{first_name}}"><br>
+    <input type="text" name="pavarde" placeholder="pavarde" value="{{last_name}}"><br>
+    <input type="email" name="email" placeholder="email" value="{{emal}}"><br>
+    <input type="text" name="kodas" placeholder="Asmens Kodas" value="{{code}}"><br>
+    <input type="text" name="tel" placeholder="Tel numeris" value="{{phone}}"><br>
+    <input type="text" name="address_id" placeholder="Adresas" value="{{address_id}}"><br>
+    <input type="submit" value="Atnaujinti">
+</form>
+
+</body>
+</html>

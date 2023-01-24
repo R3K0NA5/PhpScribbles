@@ -1,0 +1,606 @@
+#1
+
+select *
+from persons
+where first_name like 'Helen';
+
+select *
+from persons
+where address_id like '56';
+
+select *
+from persons
+where persons.email like 'nagor-akibo16@gmail.com';
+#2
+SELECT *
+FROM `groups`
+WHERE id IN (2, 3, 8);
+#3
+select max(address_id)
+from persons;
+#4
+SELECT *
+FROM persons
+where first_name LIKE '%on%'
+ORDER BY first_name DESC
+LIMIT 5;
+#5
+insert into `persons`(first_name, last_name, personal_code, phone, email, address_id)
+values ('studentas1', 'pavarde1', 47607272951, '+37023179841', 'email1@gmail.com', 99),
+       ('studentas2', 'pavarde2', 47607272952, '+37023179842', 'email2@gmail.com', 99),
+       ('studentas3', 'pavarde3', 47607272953, '+37023179843', 'email3@gmail.com', 99),
+       ('studentas4', 'pavarde4', 47607272954, '+37023179844', 'email4@gmail.com', 99),
+       ('studentas5', 'pavarde5', 47607272955, '+37023179845', 'email5@gmail.com', 99);
+#6
+SELECT COUNT(DISTINCT `address_id`)
+FROM `persons`;
+#7
+select count(id), address_id
+from `persons`
+group by address_id
+having count(id) >= 5;
+
+#UPDATE
+
+#1
+
+#Idejau asmeni tokiu vardu
+insert into `persons`(first_name, last_name, personal_code, phone, email, address_id)
+values ('Jonhn', 'jpavsarde1', 47607242951, '+37023279841', 'emaid1@gmail.com', 99);
+#Patikrinau ar yra toks asmuo
+Select *
+from `persons`
+where first_name LIKE '%jon%';
+#207,Jonhn,jpavsarde1,47607242951,+37023279841,emaid1@gmail.com,99
+#Pakeiciu vardus turincius 'jon' dali i 'pakeitstas'
+UPDATE `persons` SET `first_name` = 'pakeistas' where first_name LIKE '%jon%';
+#207,pakeistas,jpavsarde1,47607242951,+37023279841,emaid1@gmail.com,99
+
+#2
+
+#Pasitikrinu ar yra tokiu uzklausu
+SELECT address_id From persons where address_id > 15 and address_id < 30;
+#26
+#18
+#28
+#...
+#Atimu po viena skaicius is duoto saraso
+UPDATE `persons` SET `address_id` = address_id -1 where address_id > 15 and address_id < 30;
+#25
+#17
+#27
+#...
+
+#3
+
+SELECT state_id from `groups`;
+#1
+#1
+#1
+#...
+#pritaikau ta pati kaip ir #2 uzduoti tik nenurodau kam taip pritaiko visam stulpeliui
+update `groups` set `state_id` = -1 where `state_id`= 0;
+#0
+#0
+#0
+#...
+
+#4
+#pasiziuriu kiek yra eiluciu su H
+SELECT id,first_name FROM persons WHERE first_name LIKE 'H%' ORDER BY id desc LIMIT 10;
+#yra 7 eilutes
+UPDATE persons SET first_name = 'pakeisti' WHERE first_name LIKE 'H%' ORDER BY id DESC LIMIT 10;
+#Dar karta patikrinu
+SELECT id,first_name FROM persons WHERE first_name LIKE 'H%' ORDER BY id desc LIMIT 10;
+#yra 0 eiluciu
+#pasiziuriu kiek yra eiluciu su 'pakeisti'
+SELECT id,first_name FROM persons WHERE first_name LIKE 'pakeisti' ORDER BY id desc LIMIT 10;
+#yra 7 eilutes
+
+#5
+
+ALTER TABLE states MODIFY title VARCHAR(50);
+
+#Delete
+
+DELETE FROM persons WHERE id IN (1,10,20,30);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#1 uzduotis#############################################################################################################
+USE akademija;
+CREATE TABLE `Employees`
+(
+    `id`          int NOT NULL AUTO_INCREMENT,
+    `first_name`  varchar(50),
+    `second_name` varchar(50),
+    `salary`      int,
+     a
+
+);
+
+INSERT INTO Employees (first_name, second_name, salary)
+VALUES ('Raju', 'Viljo', 1000),
+       ('Steffen', 'Denzel', 1200),
+       ('Polyxena', 'Susann', 800),
+       ('Gawe', 'Goretti', 900),
+       ('Ottarr', 'Andrea', 700);
+
+SELECT first_name,second_name FROM Employees;
+
+#2 uzduotis#############################################################################################################
+
+#Pas mane 5 id pakeisiu darau pakeitimus ketvirtam
+#    4,Gawe,Goretti,900
+UPDATE `Employees` SET `salary` = `salary` * 1.1 where id = 4 ;
+#    4,Gawe,Goretti,990
+
+#3 uzduotis#############################################################################################################
+
+CREATE TABLE `orders`
+(
+    `id`          int NOT NULL AUTO_INCREMENT,
+    `first_name`  varchar(50),
+    `second_name` varchar(50),
+    `purchase_method` varchar(3),
+    `quantity` int,
+    `order_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+
+);
+#online shop purchase > osn
+#shop manager request > smr
+#direct shop purchase > dsp
+INSERT INTO orders (first_name, second_name,purchase_method,quantity,order_date )
+VALUES ('Raju', 'Viljo','osn',5,'2019-01-01 12:00:00'),
+       ('Steffen', 'Denzel','osn',12,'2021-01-01 12:00:00'),
+       ('Polyxena', 'Susann','dsp',455,'2022-01-01 12:00:00'),
+       ('Gawe', 'Goretti','smr',78,'2023-01-01 12:00:00'),
+       ('Ottarr', 'Andrea','dsp',1,'2023-01-01 12:00:00');
+
+#1,Raju,Viljo,osn,5,2019-01-01 12:00:00
+#2,Steffen,Denzel,osn,12,2021-01-01 12:00:00
+#3,Polyxena,Susann,dsp,455,2022-01-01 12:00:00
+#4,Gawe,Goretti,smr,78,2023-01-01 12:00:00
+#5,Ottarr,Andrea,dsp,1,2023-01-01 12:00:00
+
+#pasirenku data 1 metai nuo dabartines visi senakantys nuo '2022-01-12 10:00'
+SELECT order_date from orders where order_date <= '2022-01-12 10:00';
+#pakeiciu i delete
+DELETE FROM orders WHERE order_date <= '2022-01-12 10:00';
+#4,Gawe,Goretti,smr,78,2023-01-01 12:00:00
+#5,Ottarr,Andrea,dsp,1,2023-01-01 12:00:00
+
+#4 uzduotis#############################################################################################################
+
+CREATE TABLE `customers`
+(
+    `id`          int NOT NULL AUTO_INCREMENT,
+    `first_name`  varchar(50),
+    `second_name` varchar(50),
+    `email` varchar(50),
+    PRIMARY KEY (`id`)
+
+);
+INSERT INTO customers (first_name, second_name, email)
+VALUES ('Raju', 'Viljo','bxigtgv@dcom.space' ),
+       ('Steffen', 'Denzel','ciber5300@onlinecmail.com' ),
+       ('Polyxena', 'Susann','a4u6l2d@asifboot.com' ),
+       ('Gawe', 'Goretti','akxww2@hottmat.com' ),
+       ('Ottarr', 'Andrea', 'olivka12@dcom.space');
+INSERT INTO customers (first_name, second_name, email)
+VALUES ('John', 'Doe', 'john.doe@email.com');
+
+
+
+
+#1
+alter table Employees modify salary int NOT NULL;
+alter table employees add unique (ID);
+#fFOREIGN KEY sudesim antroje uzduotyje
+ALTER TABLE employees ADD CHECK (salary>=500);
+ALTER TABLE employees ALTER salary SET DEFAULT 50;
+#zemiau 500 neleidzia ideti / 'employees_chk_1' is violate
+INSERT INTO employees (first_name, second_name,salary)
+VALUES ('test1','test2', 700);
+CREATE UNIQUE INDEX credentials
+    ON customers (first_name,second_name);
+
+#2
+use akademija;
+ALTER TABLE `countries` ADD INDEX (`iso`);
+ALTER TABLE `addresses` ADD FOREIGN KEY (country_iso) REFERENCES `countries`(iso);
+ALTER TABLE `groups` ADD FOREIGN KEY (state) REFERENCES `states`(id);
+ALTER TABLE `users` ADD INDEX (`state`);
+ALTER TABLE `users` ADD FOREIGN KEY (state) REFERENCES `states`(id);
+ALTER TABLE `groups` ADD FOREIGN KEY (address_id) REFERENCES `addresses`(id);
+ALTER TABLE `persons` ADD FOREIGN KEY (address_id) REFERENCES `addresses`(id);
+ALTER TABLE `persons` ADD FOREIGN KEY (address_id) REFERENCES `addresses`(id);
+ALTER TABLE `person2gruop` ADD FOREIGN KEY (groups_id) REFERENCES `groups`(id);
+ALTER TABLE `person2gruop` ADD FOREIGN KEY (person_id) REFERENCES `persons`(id);
+#ka reikia suzinot
+select count(*)
+#is kur
+from users
+#states >> users user.state <<state.id
+join states on users.state = states.id
+
+
+#kur states title yra aktyvus
+where states.title = 'Active';
+
+select distinct state from users;
+
+select count(*)
+#is kur
+from users
+#states >> users user.state <<state.id
+join states on users.state = states.id
+where states.title = 'Active';
+
+# Kiek 'gruops' kuriu 'state' yra 'Active' būsenoje.
+select distinct  state from users;
+
+
+#1
+select count(*)
+from users
+join states on users.state = states.id
+where states.title = 'Inactive';
+#2
+select count(*)
+from `groups`
+join states on `groups`.state = states.id
+where states.title = 'Active';
+#3
+
+select persons.first_name, persons.last_name, addresses.city ,countries.title
+from persons
+LEFT JOIN addresses on persons.address_id = addresses.id LEFT JOIN countries on addresses.country_iso = countries.iso
+order by persons.first_name;
+
+#4 .Suskaičiuoti kiek yra studentų tik aktyviose "Active" grupėse / Pavaizduoti Grupės pavadinimą ir studentų skaičių tose grupese
+#count students in active
+
+select `groups`.title,count(distinct `groups`.state)
+from persons
+left join person2gruop on persons.id = person2gruop.person_id LEFT JOIN `groups` on `groups`.id = person2gruop.groups_id
+order by persons.first_name;
+
+select `groups`.title,count(distinct `groups`.state)
+from person2gruop
+LEFT JOIN `persons` on `person2gruop`.person_id = `persons`.id left join `groups` on `groups`.id
+
+group by  persons.id;
+
+
+
+SELECT `groups`.title,count(`groups`.title),`groups`.state
+FROM `person2gruop`
+         LEFT JOIN `persons` ON `person2gruop`.person_id = `persons`.id
+         LEFT JOIN `groups` ON `groups`.id = `person2gruop`.groups_id
+WHERE `groups`.state BETWEEN 3 AND 4
+GROUP BY `groups`.title,`groups`.state;
+
+SELECT `groups`.title,count(`groups`.title)
+FROM `person2gruop` LEFT JOIN `groups` ON `groups`.id = `person2gruop`.groups_id
+WHERE `groups`.state BETWEEN 3 AND 4
+GROUP BY `groups`.title,`groups`.state;
+
+
+
+SELECT `groups`.title,count(`groups`.title)
+FROM `person2gruop` LEFT JOIN `groups` ON `groups`.id = `person2gruop`.groups_id
+WHERE `groups`.state BETWEEN 3 AND 4
+GROUP BY `groups`.title;
+SET @@sql_mode = 'ONLY_FULL_GROUP_BY';
+SET @@sql_mode = '';
+SELECT `groups`.title,count(`groups`.title)
+FROM `person2gruop` LEFT JOIN `groups` ON `groups`.id = `person2gruop`.groups_id
+WHERE `groups`.state BETWEEN 3 AND 4
+GROUP BY `groups`.title,`groups`.state;
+
+
+select count(*) as studentu_kiekis, g.title, g.id, s.title
+from `person2gruop`
+         left join `groups` g on person2gruop.groups_id = g.id
+         left join `states` s on g.state = s.id
+where s.title = 'Suspended'
+GROUP BY g.title;
+
+SELECT COUNT(*) AS studentu_kiekis, g.title, min(g.id) as id, min(s.title) as state
+FROM `person2gruop`
+         LEFT JOIN `groups` g ON person2gruop.groups_id = g.id
+         LEFT JOIN `states` s ON g.state = s.id
+WHERE s.title = 'Suspended'
+GROUP BY g.title
+
+use akademija;
+#SELECT
+#1
+select first_name, adress_id, email
+from persons;
+#2
+select title
+FROM `groups`
+where id in (2, 3, 8);
+#3
+select max(id)
+from `groups`;
+#4
+select *
+from persons
+where first_name like '%on%'
+order by id desc
+limit 5;
+#5
+#insert into persons(first_name, last_name, email, code, phone, adress_id) values
+#    ('name','lastname','emai','codessd','phonesdsd',864);
+#6
+select count(title)
+from `groups`;
+#7
+select adress_id, count(id)
+from persons
+group by adress_id
+having count(id) >= 5;
+# cia kaip gaut null
+SELECT COUNT(*)
+FROM persons
+WHERE adress_id IS NULL;
+#UPDATES
+#1
+update persons
+set first_name = 'Jonas'
+where first_name like '%jon%';
+#     8 rows affected in 5 ms
+#2
+update persons
+set adress_id = 666
+where adress_id > 15
+  and persons.adress_id < 30;
+#     10 rows affected in 5 ms
+#3
+update `groups`
+set state = 3
+where state = 1;
+#4
+update persons
+set first_name = 'Helen'
+where first_name like 'H%';
+#5
+alter table `states`
+    modify title varchar(50);
+
+#CONSTRAINTS
+#2
+ALTER TABLE `countries`
+    ADD INDEX (`iso`);
+ALTER TABLE `addresses`
+    ADD FOREIGN KEY (country_iso) REFERENCES `countries` (iso);
+ALTER TABLE `groups`
+    ADD FOREIGN KEY (state) REFERENCES `states` (id);
+ALTER TABLE `users`
+    ADD INDEX (`state`);
+ALTER TABLE `users`
+    ADD FOREIGN KEY (state) REFERENCES `states` (id);
+ALTER TABLE `groups`
+    ADD FOREIGN KEY (address_id) REFERENCES `addresses` (id);
+ALTER TABLE `persons`
+    ADD FOREIGN KEY (adress_id) REFERENCES `addresses` (id);
+ALTER TABLE `persons`
+    ADD FOREIGN KEY (adress_id) REFERENCES `addresses` (id);
+ALTER TABLE `person2gruop`
+    ADD FOREIGN KEY (groups_id) REFERENCES `groups` (id);
+ALTER TABLE `person2gruop`
+    ADD FOREIGN KEY (person_id) REFERENCES `persons` (id);
+ALTER TABLE `users`
+    ADD FOREIGN KEY (person_id) REFERENCES `persons` (id);
+#3
+#CREATE TABLE `Students`
+#(
+#    `ID`      int NOT NULL AUTO_INCREMENT,
+#    `Name`    VARCHAR(50),
+#    `Age`     INT,
+#    `ClassID` INT,
+#    FOREIGN KEY (ClassID) REFERENCES Classes (ID)
+#);
+#4
+CREATE TABLE `orders`
+(
+    `ID`       int NOT NULL AUTO_INCREMENT,
+    `Product`  varchar(50),
+    `Quantity` int,
+    `Price`    int,
+    CHECK (price > 10),
+    PRIMARY KEY (`id`)
+);
+#5
+CREATE TABLE `Employees`
+(
+    `ID`     int NOT NULL AUTO_INCREMENT,
+    `Name`   varchar(50),
+    `Email`  varchar(50),
+    `Salary` int,
+    unique (Email),
+    PRIMARY KEY (`id`)
+);
+#6
+CREATE TABLE Cities
+(
+    `ID`      int         NOT NULL AUTO_INCREMENT,
+    `Name`    varchar(50) NOT NULL,
+    `country` varchar(50) NOT NULL,
+    PRIMARY KEY (ID)
+);
+
+#7
+CREATE TABLE Products
+(
+    `ProductID`   int NOT NULL AUTO_INCREMENT,
+    `Name`        varchar(50),
+    `Description` varchar(200) DEFAULT 'N/A',
+    `Price`       int,
+
+    PRIMARY KEY (ProductID)
+);
+#8
+CREATE TABLE Transactions
+(
+    `ID`              int NOT NULL AUTO_INCREMENT,
+    `AccountNumber`   int,
+    `TransactionType` varchar(255),
+    `Amount`          decimal(10, 2),
+    `TransactionDate` date,
+    PRIMARY KEY (ID)
+);
+
+CREATE TRIGGER tr_update_transaction_date
+    AFTER UPDATE
+    ON Transactions
+    FOR EACH ROW
+BEGIN
+    UPDATE Transactions
+    SET TransactionDate = CURRENT_TIMESTAMP
+    WHERE ID = OLD.ID;
+END;
+#9
+CREATE TABLE Inventory
+(
+    `ItemID`       int NOT NULL AUTO_INCREMENT,
+    `ItemName`     varchar(50),
+    `Quantity`     int,
+    `ReorderLevel` int,
+    CHECK ( Quantity > ReorderLevel ),
+    PRIMARY KEY (ItemID)
+);
+#10
+CREATE TABLE Customers
+(
+    `CustomerID` int NOT NULL AUTO_INCREMENT,
+    `Name`       varchar(50),
+    `Phone`      varchar(50),
+    `Email`      varchar(50),
+    PRIMARY KEY (CustomerID)
+);
+CREATE FULLTEXT INDEX ft_index_name
+    ON Customers (Name, Email);
+
+#JOINS
+
+set @@sql_mode = 'only_full_group_by';
+set @@sql_mode = '';
+
+#1
+SELECT count(users.id) as skaicius, users.state as aktyvios_klases
+FROM users
+WHERE state >= 5
+GROUP BY users.state;
+#2
+SELECT `groups`.title, COUNT(`groups`.state) as grupes
+FROM `groups`
+WHERE state >= 3
+  AND state <= 4
+GROUP BY `groups`.title;
+#3
+select persons.first_name as vardas, persons.last_name as pavarde, addresses.city as miestas, countries.title as sallis
+from persons
+         left join addresses on persons.adress_id = addresses.id
+         left join countries on addresses.country_iso = countries.iso
+group by persons.first_name, persons.last_name, addresses.city, countries.title;
+#4
+select g.title as Grupes_pavadinimas, count(groups_id) as Aktyviu_studentu_skaicius
+from person2gruop p2g
+         left join `groups` g on p2g.groups_id = g.id
+WHERE g.state BETWEEN 3 AND 4
+group by g.title;
+#perziureti koda
+/*select count(*) as studentu_kiekis, g.title, g.id, s.title
+from `person2gruop`
+         left join `groups` g on person2gruop.groups_id = g.id
+         left join `states` s on g.state = s.id
+where s.title = 'Suspended'
+GROUP BY g.title;*/
+
+#5
+# studentu saraso (grupiu kuriu pavadinimas baigiasi D) kaip CS_PHP_D
+select p.first_name as Vardas, p.last_name as pavarde, g.title as grupe
+from `persons` p
+         left join `person2gruop` p2g on p.id = p2g.person_id
+         left join `groups` g on p2g.person_id = g.id
+where g.title like '%_D'
+group by p.first_name, p.last_name, g.title;
+select count(distinct p.first_name, p.last_name) as Bendras_skaicius
+from `persons` p
+         left join `person2gruop` p2g on p.id = p2g.person_id
+         left join `groups` g on p2g.person_id = g.id
+where g.title like '%_D';
+#6
+#studentus ir pilną adresą > viename stulpelyje
+select g.title, p.first_name, p.last_name, a.country_iso, a.city, a.street
+from `groups` g
+         left join `person2gruop` p2g on g.id = p2g.groups_id
+         left join `persons` p on p2g.person_id = p.id
+         left join `addresses` a on p.adress_id = a.id
+where g.title like 'CS_PHP_D'
+group by g.title, p.first_name, p.last_name, a.country_iso, a.city, a.street;
+
+select concat(g.title, ' ', p.first_name, ' ', p.last_name, ' ', a.country_iso, ' ', a.city, ' ',
+              a.street) as Vienas_stulpelis
+from `groups` g
+         left join `person2gruop` p2g on g.id = p2g.groups_id
+         left join `persons` p on p2g.person_id = p.id
+         left join `addresses` a on p.adress_id = a.id
+where g.title like 'CS_PHP_D'
+group by g.title, p.first_name, p.last_name, a.country_iso, a.city, a.street;
+
+SELECT CONCAT(IFNULL(g.title, 'n/a'), ' ', IFNULL(p.first_name, 'n/a'), ' ', IFNULL(p.last_name, 'n/a'), ' ',
+              IFNULL(a.country_iso, 'n/a'), ' ', IFNULL(a.city, 'n/a'), ' ',
+              IFNULL(a.street, 'n/a')) AS Vienas_stulpelis
+FROM `groups` g
+         LEFT JOIN `person2gruop` p2g ON g.id = p2g.groups_id
+         LEFT JOIN `persons` p ON p2g.person_id = p.id
+         LEFT JOIN `addresses` a ON p.adress_id = a.id
+WHERE g.title LIKE 'CS_PHP_D'
+GROUP BY g.title, p.first_name, p.last_name, a.country_iso, a.city, a.street;
+SELECT CONCAT(IFNULL(g.title, ''), ' ', IFNULL(p.first_name, ''), ' ', IFNULL(p.last_name, ''), ' ',
+              IFNULL(a.country_iso, ''), ' ', IFNULL(a.city, ''), ' ', IFNULL(a.street, '')) AS Vienas_stulpelis
+FROM `groups` g
+         LEFT JOIN `person2gruop` p2g ON g.id = p2g.groups_id
+         LEFT JOIN `persons` p ON p2g.person_id = p.id
+         LEFT JOIN `addresses` a ON p.adress_id = a.id
+WHERE g.title LIKE 'CS_PHP_D'
+GROUP BY g.title, p.first_name, p.last_name, a.country_iso, a.city, a.street;
+#7
+SELECT p.id, p.first_name, p.last_name, g.title, g.state
+from `persons` p
+         left join `person2gruop` p2g on p.id = p2g.person_id
+         left join `groups` g on p2g.groups_id = g.id
+WHERE (p.first_name like '' OR p.last_name like '')
+  AND g.state BETWEEN 5 AND 6
+  AND g.state IS NOT NULL
+  AND g.title IS NOT NULL
+group by p.id, p.first_name, p.last_name, g.title, g.state;
+#8
+SELECT COUNT(*) as Quantity, CONCAT(a.street, ', ', a.city, ', ', a.country_iso) as Address
+FROM `groups` g
+         INNER JOIN addresses a ON g.address_id = a.id
+GROUP BY g.address_id
+
+
+
+create table eshop.Products
+as select * from akademija.Products;
+drop table akademija.Products;

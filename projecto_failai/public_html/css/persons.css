@@ -1,0 +1,210 @@
+body {
+    background-color: #001219;
+    margin: 0;
+    height: 100%;
+    width: 99%;
+    font: 1.3rem Inconsolata, monospace;
+}
+
+
+footer {
+    margin-top: auto;
+
+    width: 100%;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #001219;
+    color: #0a9396;
+    text-align: center;
+
+}
+
+.raudonas {
+    display: inline-block;
+    color: #0a9396;
+    font-size: 17px;
+    font-weight: 630;
+}
+
+.raudonas img {
+    float: left;
+    margin-right: 5px;
+
+}
+
+.raudonas p {
+    float: right;
+    margin-top: 1px;
+    text-shadow: 0 0 2px rgba(10, 147, 150, 0.4)
+}
+
+header li {
+    display: inline;
+    background-color: #001219;
+    border-radius: 0 0 10px 10px;
+}
+
+header ul {
+    background-color: #001219;
+}
+
+
+header video {
+    border-top: none;
+    border-left: none;
+    width: 11em;
+    height: 11em;
+    background-color: #001219;
+
+}
+
+.blankDesine {
+    padding-right: 0;
+}
+
+footer p {
+    padding-top: 3px;
+}
+
+header .antrasL {
+    z-index: 0
+}
+
+header .antrasL video {
+    z-index: -2;
+    height: 100%;
+    width: 100%;
+    background-color: #0a9396
+}
+
+header .antrasL a {
+    display: block;
+    float: right;
+    background-color: rgba(10, 147, 150, 0)
+}
+
+.moveRight {
+    margin-left: -33px;
+}
+
+header ul {
+    padding-top: 50px;
+    display: flex;
+}
+
+.p {
+    color: #0a9396;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+}
+/*Email linku spalva*/
+a {
+    color: #f38a1c;
+}
+a:hover {
+    text-decoration: none;
+}
+
+
+/*Soniniai mygtukai Inspect Delete Update*/
+
+
+.redaguoti {
+    display: flex;
+    color: #001219;
+    width: 7em;
+    height: 2em;
+    align-content:center ;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(233, 216, 166, 0.4);
+    clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%);
+}
+
+.salinti {
+    display: flex;
+    color: #001219;
+    width: 7em;
+    height: 2em;
+    align-content:center ;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(174, 32, 18, 0.4);
+    clip-path: polygon(0% 0%, 100% 0, 100% 50%, 90% 100%, 0 100%, 0% 50%);
+}
+
+.perziureti {
+    display: flex;
+    color: #001219;
+    width: 7em;
+    height: 2em;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(10, 147, 150, 0.4);
+    clip-path: polygon(0% 0%, 90% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%);
+}
+
+
+/*Soniniai navigacijos mygtuku stilius*/
+
+
+.visiLayer {
+    position: relative;
+    LEFT: 7px;
+    width: 200px;
+    height: 50px;
+    transition: 10s ease-out;
+
+
+}
+
+
+.pirmasL {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    background: rgba(10, 147, 150, 0.53);
+    z-index: 0;
+    clip-path: polygon(15% 0, 30% 0, 30% 50%, 15% 100%, 0 100%, 0% 50%);
+    animation-name: blink;
+    animation-duration: 1500ms;
+    animation-iteration-count: infinite;
+    left: 0;
+    margin: 0;
+}
+
+.antrasL {
+    position: absolute;
+    width: 190px;
+    height: 50px;
+
+    z-index: -1;
+    background: rgba(10, 147, 150, 0.53);
+    clip-path: polygon(30% 0, 100% 0, 100% 50%, 85% 100%, 15% 100%, 30% 50%);
+
+    left: 10px;
+    margin: 0;
+
+}
+
+.logoff a {
+    position: absolute;
+    color: #001219;
+    font: 2rem Inconsolata, monospace;
+    left: 68px;
+    top: 7px;
+    z-index: 5;
+    text-decoration: none;
+}
+.tableGaires{
+
+}
